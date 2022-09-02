@@ -39,3 +39,14 @@ code {
   gap: 2rem;
   flex-wrap: wrap;
 }
+
+.currency {
+  min-width: 300px;
+}
+
+  @media screen and (max-width: 768px) {
+    .ant-card-bordered {
+      min-width: 100%;
+      width: 100% !important;
+    }
+  }

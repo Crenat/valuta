@@ -9,7 +9,7 @@ const { Title } = Typography
 
 export const Currency = ({ ccy, base_ccy, buy, sale }) => {
   return (
-    <Card title={ccy} style={{ minWidth: '300px' }}>
+    <Card title={ccy} className="currency">
       <Row gutter={[8, 8]}>
         <Col span={12}>
           <Title level={3}>куплю: <Statistic valueStyle={{ color: '#3f8600' }} value={buy} precision={2} suffix={base_ccy.toUpperCase()} /></Title>
