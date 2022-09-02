@@ -1,3 +1,6 @@
+// Libraries
+import React from 'react';
+
 // Components
 import { Card, Typography } from 'antd'
 

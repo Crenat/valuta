@@ -33,3 +33,9 @@ code {
   display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+.currencies_container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

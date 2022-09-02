@@ -1,9 +1,12 @@
+// Libraries
+import React from 'react';
+
 // Styles
 import './App.css';
 import 'antd/dist/antd.css';
 
 // Components
-import { Col, Layout, Row, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 import { Section } from './ui/Section'
 
 // Hooks
@@ -39,15 +42,13 @@ function App() {
         <Section title="Курси валют">
           <Title level={3}>Оновлено о: {new Date().toString()}</Title>
           <Skeleton loading={isLoading} />
-          <Row gutter={[16, 16]}>
+          <div className="currencies_container">
             {!isLoading && currencies.map(currency => {
               return (
-                <Col span={8} md={{ display: 'none' }}>
                   <Currency {...currency} />
-                </Col>
                 )
             })}
-          </Row>
+          </div>
         </Section>
       </Content>
     </div>
