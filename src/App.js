@@ -42,7 +42,7 @@ function App() {
           <Row gutter={[16, 16]}>
             {!isLoading && currencies.map(currency => {
               return (
-                <Col span={8}>
+                <Col span={8} md={{ display: 'none' }}>
                   <Currency {...currency} />
                 </Col>
                 )
