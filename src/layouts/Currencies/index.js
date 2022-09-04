@@ -39,6 +39,7 @@ export const Currencies = () => {
     const filteredCurrencies = currencies.filter(currency => currency.txt.toLowerCase().includes(value.toLowerCase()))
     setFilteredCurrencies(filteredCurrencies.length > 0 ? filteredCurrencies : currencies);
   }
+
   return (
     <Section title="Курси валют">
       <Title level={3}>Оновлено о: {new Date().toString()}</Title>
