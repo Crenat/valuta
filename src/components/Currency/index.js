@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { Card } from '../../ui/Card'
 import { Col, Input, Row, Typography } from 'antd'
@@ -15,6 +15,8 @@ export const Currency = ({ txt, rate, cc, exchangedate }) => {
     setValue(e.target.value)
     setResult(e.target.value * rate)
   }
+
+  const inputRef = useRef();
 
   const handleCurrencyChange = (e) => {
     console.log({ e })
@@ -33,7 +35,16 @@ export const Currency = ({ txt, rate, cc, exchangedate }) => {
       </Row>
       <Row gutter={[0, 16]}>
         <Input addonBefore={cc} value={value} onChange={handleUahChange} />
-        <Input addonBefore="UAH" value={result} onChange={handleCurrencyChange}/>
+        <Input
+          addonBefore="UAH"
+          value={result}
+          onChange={handleCurrencyChange}
+          ref={inputRef}
+          onClick={() => {
+            inputRef.current.focus({
+              cursor: 'all',
+          });
+        }} />
       </Row>
       <span>{exchangedate}</span>
     </Card>
