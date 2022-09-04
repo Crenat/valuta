@@ -6,25 +6,41 @@ import './App.css';
 import 'antd/dist/antd.css';
 
 // Components
-import { Layout, Select, Typography } from 'antd';
+import { Affix, Button } from 'antd'
 
-// Hooks
-import { useEffect, useState } from 'react';
-import { Currency } from './components/Currency'
-import { Skeleton } from 'antd/es'
-import { Option } from 'antd/es/mentions'
+// Layouts
 import { Currencies } from './layouts/Currencies'
 import { Sidebar } from './ui/Sidebar'
-
-const { Title } = Typography;
-const { Content } = Layout;
+import { ArrowUpOutlined } from '@ant-design/icons'
 
 function App() {
+  const [showToTopButton, setShowToTopButton] = React.useState(false)
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setShowToTopButton(true)
+      } else {
+        setShowToTopButton(false)
+      }
+    })
+  }, [])
 
   return (
     <div className="App">
-        <Sidebar content={[<Currencies />]} />
+      <Sidebar content={[<Currencies />]} />
+      {showToTopButton && (
+        <Affix offsetBottom={20} style={{ position: 'fixed', right: '20px' }}>
+          <Button type="primary" shape="circle" icon={<ArrowUpOutlined />} size="large" onClick={scrollToTop} className="to-top-button" />
+        </Affix>
+      )}
     </div>
   );
 }

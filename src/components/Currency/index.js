@@ -9,13 +9,15 @@ const { Title } = Typography
 
 export const Currency = ({ txt, rate, cc, exchangedate }) => {
   const [value, setValue] = React.useState(1)
-  const [result, setResult] = React.useState(1 / rate)
+  const [result, setResult] = React.useState(value * rate)
   const handleUahChange = (e) => {
+    console.log({ e })
     setValue(e.target.value)
     setResult(e.target.value * rate)
   }
 
   const handleCurrencyChange = (e) => {
+    console.log({ e })
     setValue(e.target.value / rate)
     setResult(e.target.value)
   }

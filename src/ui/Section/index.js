@@ -12,7 +12,7 @@ const { Title } = Typography
 
 export const Section = forwardRef(({ title, children, ...props }, ref) => {
   return (
-    <Card {...props} ref={ref}>
+    <Card {...props} ref={ref} >
       <Title level={2} style={{ marginTop: '0' }}>{title}</Title>
       {children}
     </Card>

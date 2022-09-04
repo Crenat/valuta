@@ -50,3 +50,60 @@ code {
       width: 100% !important;
     }
   }
+
+
+.to-top-button {
+  animation: movebtn 3s ease-in-out infinite;
+}
+
+@keyframes movebtn {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(5px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+
+.header-logo {
+  height: 2rem;
+  margin: 1rem;
+  color: #FAFAFA;
+  font-weight: bold;
+  font-size: 1.5rem;
+  user-select: none;
+  text-align: center;
+  transition: .2s ease-in-out;
+}
+
+.header-logo:hover {
+  background-color: #001f3b;
+  border-radius: 20%;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.social-media-item {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: #001f3b 2px solid;
+}
