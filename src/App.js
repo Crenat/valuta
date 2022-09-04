@@ -23,7 +23,8 @@ function App() {
 
   const fetchCurrencies = async () => {
     setIsLoading(true);
-    const response = await fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
+    // const response = await fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5');
+    const response = await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
     const data = await response.json();
     setCurrencies(data);
     setIsLoading(false);
