@@ -61,6 +61,7 @@ function App() {
           <Select
             loading={isLoading}
             mode="multiple"
+            size="large"
             style={{ width: '100%', marginBottom: '1rem' }}
             onSearch={handleSearch}
             placeholder="Оберіть валюти длля відображення"
