@@ -6,7 +6,7 @@ import '../Section/style.css'
 
 export const Card = ({ title, children }) => {
   return (
-    <SCard className="border" style={{ width: '23.5%' }}>
+    <SCard className="border">
       {title && <Typography.Title level={2} style={{ marginTop: '0' }}>{title}</Typography.Title>}
       {children}
     </SCard>
