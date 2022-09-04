@@ -7,7 +7,7 @@ import { Statistic } from 'antd/es'
 
 const { Title } = Typography
 
-export const Currency = ({ txt, rate, cc }) => {
+export const Currency = ({ txt, rate, cc, exchangedate }) => {
   const [value, setValue] = React.useState(1)
   const [result, setResult] = React.useState(1 / rate)
   const handleUahChange = (e) => {
@@ -33,6 +33,7 @@ export const Currency = ({ txt, rate, cc }) => {
         <Input addonBefore={cc} value={value} onChange={handleUahChange} />
         <Input addonBefore="UAH" value={result} onChange={handleCurrencyChange}/>
       </Row>
+      <span>{exchangedate}</span>
     </Card>
   )
 }
