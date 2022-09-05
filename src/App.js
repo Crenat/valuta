@@ -11,6 +11,8 @@ import { Affix, Button } from 'antd'
 // Layouts
 import { Currencies } from './layouts/Currencies'
 import { Sidebar } from './ui/Sidebar'
+import { Films } from './layouts/Films';
+
 import { ArrowUpOutlined } from '@ant-design/icons'
 
 function App() {
@@ -35,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar content={[<Currencies />]} />
+      <Sidebar content={[<Currencies />, <Films />]} />
       {showToTopButton && (
         <Affix offsetBottom={20} style={{ position: 'fixed', right: '20px' }}>
           <Button type="primary" shape="circle" icon={<ArrowUpOutlined />} size="large" onClick={scrollToTop} className="to-top-button" />

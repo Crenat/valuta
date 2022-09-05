@@ -3,8 +3,7 @@ import { useState } from 'react'
 import { Layout, Menu } from 'antd'
 
 // Icons
-import { DollarTwoTone } from '@ant-design/icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { DollarTwoTone, PlaySquareTwoTone } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -20,13 +19,16 @@ function getItem(label, key, icon, children) {
 
 
 export const Sidebar = ({ content }) => {
+  const defaultTab = window.localStorage.getItem('selectedTab') || '0';
   const [collapsed, setCollapsed] = useState(true);
-  const [selectedItem, setSelectedItem] = useState('0');
+  const [selectedItem, setSelectedItem] = useState(defaultTab);
   const items = [
     getItem('Курси валют', '0', <DollarTwoTone />),
+    getItem('Фільми', '1', <PlaySquareTwoTone />),
   ];
 
   const handleItemClick = (item) => {
+    window.localStorage.setItem('selectedTab', item.key);
     setSelectedItem(item.key);
   }
 
@@ -38,7 +40,7 @@ export const Sidebar = ({ content }) => {
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <div className="header-logo">DB</div>
-        <Menu theme="dark" defaultSelectedKeys={['0']} mode="inline" items={items} onClick={handleItemClick} />
+        <Menu theme="dark" defaultSelectedKeys={[defaultTab]} mode="inline" items={items} onClick={handleItemClick} />
       </Sider>
       <Layout className="site-layout">
         <Header
