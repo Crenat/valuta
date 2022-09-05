@@ -15,7 +15,7 @@ import { Section } from '../../ui/Section'
 
 export const Films = () => {
   const API_KEY = '824e129b' 
-  const DEFAULT_REQUEST_LINK = `http://www.omdbapi.com/?apikey=${API_KEY}&`
+  const DEFAULT_REQUEST_LINK = `https://www.omdbapi.com/?apikey=${API_KEY}&`
   const [currentUri, setCurrentUri] = useState(DEFAULT_REQUEST_LINK)
   const [films, setFilms] = useState(null)
   const { loading, error, data } = useFetch(currentUri)
