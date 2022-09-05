@@ -31,6 +31,7 @@ export const SearchInput = styled.input`
   font-weight: bold;
   border: none;
   background: white;
+  border-radius: 2rem;
 
   @media screen and (max-width: 1500px) {
     height: 100%;

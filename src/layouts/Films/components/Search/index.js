@@ -8,7 +8,8 @@ import { useRequest } from 'ahooks';
 export const Search = ({
   $setFilms: setFilms,
   $DEFAULT_REQUEST_LINK: DEFAULT_REQUEST_LINK,
-  $setCurrentUri: setCurrentUri
+  $setCurrentUri: setCurrentUri,
+  floatSearch,
 }) => {
   const { register, handleSubmit } = useForm();
 
@@ -22,7 +23,7 @@ export const Search = ({
   })
 
   return (
-    <Wrap onSubmit={handleSubmit(handleSearch)}>
+    <Wrap onSubmit={handleSubmit(handleSearch)} $floatSearch={floatSearch}>
       <SearchInput {...register('requestTitle')} placeholder="Введіть назву фільму" onChange={run} />
     </Wrap>
   );
